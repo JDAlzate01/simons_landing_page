@@ -1,0 +1,415 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  --primary-color: #037859;
+  --text-color: #333;
+  --light-bg: #f8f9fa;
+}
+body {
+  background-color: var(--light-bg);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+.hero {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(3, 120, 89, 0.85), rgba(3, 120, 89, 0.85)),
+    url("images/hero_bg.jpg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  background-color: #037859; /* Fallback color for image edges */
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+
+.logo h1 {
+  color: white;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 4rem auto;
+  text-align: center;
+  color: white;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s forwards;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s 0.3s forwards;
+}
+
+.offer-badge {
+  background: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  display: inline-block;
+  margin-top: 2rem;
+  transform: scale(0.9);
+  transition: transform 0.3s ease;
+}
+
+.offer-badge:hover {
+  transform: scale(1);
+}
+
+.discount {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  margin-right: 1rem;
+}
+
+.discount-text {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.email-capture-section {
+  padding: 4rem 2rem;
+  background: white;
+  width: 50%;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 0 20px 10px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.container h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--text-color);
+}
+
+.container p {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.subscribe-form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.input-group {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+input[type="email"] {
+  flex: 1;
+  padding: 1rem 1.5rem;
+  border: 2px solid #eee;
+  border-radius: 50px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+input[type="email"]:focus {
+  outline: none;
+  border-color: var(--accent-color);
+}
+
+button {
+  background: var(--primary-color);
+  color: var(--light-bg);
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  background-color: #c0392b;
+}
+
+.benefits {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+.benefit-item {
+  text-align: center;
+  padding: 2rem;
+  background: var(--light-bg);
+  border-radius: 15px;
+  transition: transform 0.3s ease;
+}
+
+.benefit-item:hover {
+  transform: translateY(-5px);
+}
+
+.benefit-item i {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.success-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+}
+
+.modal-content i {
+  font-size: 4rem;
+  color: #2ecc71;
+  margin-bottom: 1rem;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .email-capture-section {
+    width: 70%;
+  }
+}
+
+@media (max-width: 992px) {
+  .hero-content h1 {
+    font-size: 3rem;
+  }
+
+  .email-capture-section {
+    width: 80%;
+  }
+
+  .benefits {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 80vh;
+    padding: 1rem;
+  }
+
+  .hero-content {
+    margin: 2rem auto;
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+  }
+
+  .email-capture-section {
+    width: 90%;
+    padding: 3rem 1.5rem;
+  }
+
+  .container h2 {
+    font-size: 2rem;
+  }
+
+  .input-group {
+    flex-direction: column;
+  }
+
+  .benefits {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .benefit-item {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero {
+    min-height: 70vh;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .offer-badge {
+    padding: 0.8rem 1.5rem;
+  }
+
+  .discount {
+    font-size: 1.5rem;
+  }
+
+  .discount-text {
+    font-size: 1rem;
+  }
+
+  .email-capture-section {
+    width: 95%;
+    padding: 2rem 1rem;
+  }
+
+  .container h2 {
+    font-size: 1.75rem;
+  }
+
+  .container p {
+    font-size: 1rem;
+  }
+
+  input[type="email"] {
+    padding: 0.8rem 1.2rem;
+  }
+
+  button {
+    padding: 0.8rem 1.5rem;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .benefit-item {
+    padding: 1.25rem;
+  }
+
+  .benefit-item i {
+    font-size: 1.75rem;
+  }
+
+  .modal-content {
+    padding: 1.5rem;
+    width: 95%;
+  }
+
+  .modal-content i {
+    font-size: 3rem;
+  }
+}
+
+/* Handle very small screens */
+@media (max-width: 375px) {
+  .hero-content h1 {
+    font-size: 1.75rem;
+  }
+
+  .subtitle {
+    font-size: 0.9rem;
+  }
+
+  .email-capture-section {
+    width: 100%;
+    border-radius: 0;
+  }
+
+  .container h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Handle landscape orientation on mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+  .hero {
+    min-height: 100vh;
+  }
+
+  .hero-content {
+    margin: 1rem auto;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .email-capture-section {
+    padding: 2rem 1rem;
+  }
+}
+
+/* Handle high-resolution screens */
+@media (min-width: 1400px) {
+  .hero-content {
+    max-width: 1000px;
+  }
+
+  .email-capture-section {
+    width: 60%;
+  }
+
+  .container {
+    max-width: 1000px;
+  }
+}

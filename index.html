@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simons - Special Offer Inside!</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="hero">
+        <nav>
+            <div class="logo">
+                <h1>SIMONS</h1>
+            </div>
+        </nav>
+
+        <div class="hero-content">
+            <h1 class="animate-text">Welcome to Simons</h1>
+            <p class="subtitle animate-text-delay">Discover Excellence in Every Detail</p>
+            <div class="offer-badge">
+                <span class="discount">20% OFF</span>
+                <span class="discount-text">Your First Purchase</span>
+            </div>
+        </div>
+
+        <div class="email-capture-section">
+            <div class="container">
+                <h2>Get Your Exclusive Discount</h2>
+                <p>Subscribe now and receive a special 20% discount code instantly!</p>
+
+                <form id="subscribe-form" class="subscribe-form">
+                    <div class="input-group">
+                        <input type="email" id="email" placeholder="Enter your email address" required>
+                        <button type="submit">
+                            <span>Subscribe</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </form>
+
+                <div class="benefits">
+                    <div class="benefit-item">
+                        <i class="fas fa-tag"></i>
+                        <p>Exclusive Offers</p>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-bell"></i>
+                        <p>New Arrivals Alert</p>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-gift"></i>
+                        <p>Special Rewards</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="success-modal" id="success-modal">
+        <div class="modal-content">
+            <i class="fas fa-check-circle"></i>
+            <h3>Thank You for Subscribing!</h3>
+            <p>Check your email for your exclusive discount code.</p>
+            <button onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
